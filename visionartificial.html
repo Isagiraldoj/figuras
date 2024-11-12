@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende las Figuras en Inglés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            margin-top: 30px;
+            color: #2c3e50;
+        }
+
+        #instructions {
+            font-size: 18px;
+            color: #34495e;
+            margin-top: 20px;
+        }
+
+        #video-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        iframe {
+            margin-top: 20px;
+            border: none;
+            width: 100%;
+            height: 500px;
+        }
+
+        #reset-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #reset-btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aprende las Figuras en Inglés</h1>
+    <p id="instructions">Arrastra las figuras a su nombre en inglés. Si quieres reiniciar, muestra ambas manos abiertas.</p>
+    <div id="video-container">
+        <iframe src="https://editor.p5js.org/Isagiraldoj/full/PKtVKlQSP"></iframe>
+    </div>
+
+    <script>
+        // Función para solicitar acceso a la cámara
+        async function getCameraPermission() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                console.log("Cámara habilitada con éxito");
+            } catch (error) {
+                console.error("Error al acceder a la cámara: ", error);
+                alert("Por favor, permite el acceso a la cámara.");
+            }
+        }
+
+        // Llamamos a la función para solicitar los permisos
+        getCameraPermission();
+    </script>
+</body>
+</html>
+
